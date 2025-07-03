@@ -10,7 +10,7 @@ function Book({ book }) {
                 <h2> title:{title}</h2>
                 <p><strong>Author:</strong> {author}</p>
                 <p><strong>Category:</strong> {category}</p>
-                {/* <Link to={`/book/${book.id}`}>View Details</Link> */}
+                <Link to={`/book/${book.id}`}>View Details</Link>
                 <p className="text-red-900 text-2xl font-bold">View Details</p>
             </div>
         </div>
