@@ -1,8 +1,12 @@
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { IoLibrary } from "react-icons/io5";
+import { MdConnectWithoutContact } from "react-icons/md";
 import { useState } from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { IoIosHome } from "react-icons/io";
+import { FcAbout } from "react-icons/fc";
+import { MdOutlineBookmarkAdd } from "react-icons/md";
 
 function Header() {
     const newBooks = useSelector((store) => store.AddBook.newItems);
@@ -34,18 +38,22 @@ function Header() {
                     className={`flex flex-col text-2xl md:flex-row gap-4 text-center md:text-left md:items-center transition-all duration-300 ease-in-out ${isMenuOpen ? "flex" : "hidden md:flex"
                         }`}
                 >
-                    <Link to="/">
-                        <li className="hover:text-red-400 hover:no-underline transition-colors">Home</li>
+                    <Link to="/" className="hover:text-red-400  flex  items-center hover:no-underline transition-colors">
+                     <IoIosHome />
+                    <li >Home</li>
                     </Link>
-                    <Link to="/about">
-                        <li className="hover:text-red-400 hover:no-underline transition-colors">About</li>
+                    <Link to="/about" className="hover:text-red-400  flex  items-center hover:no-underline transition-colors">
+                        <FcAbout />
+                        <li >About</li>
                     </Link>
-                    <Link to="/contact">
-                        <li className="hover:text-red-400 hover:no-underline transition-colors">Contact</li>
+                    <Link to="/contact" className="hover:text-red-400  flex  items-center hover:no-underline transition-colors">
+                        <MdConnectWithoutContact />
+                        <li > Contact</li>
                     </Link>
-                    <Link to="/add">
-                        <li className="hover:text-red-400 hover:no-underline transition-colors">
-                            Add Book
+                    <Link to="/add" className="hover:text-red-400  flex  items-center hover:no-underline transition-colors">
+                        <MdOutlineBookmarkAdd />
+                        <li >
+                         Add Book
                             {newBooks.length > 0 && (
                                 <span className="text-xl font-bold text-white ml-2">
                                     ({newBooks.length})

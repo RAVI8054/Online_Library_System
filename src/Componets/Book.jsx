@@ -1,6 +1,4 @@
-
-import { Link } from 'react-router-dom';
-
+//Book componet
 function Book({ book }) {
    
     const { author, coverImage, category, title } = book;
