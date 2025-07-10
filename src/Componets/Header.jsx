@@ -1,28 +1,67 @@
-
-import { Link } from "react-router-dom"
-import { useSelector } from "react-redux"
+import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { IoLibrary } from "react-icons/io5";
+import { useState } from "react";
+import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 
 function Header() {
+    const newBooks = useSelector((store) => store.AddBook.newItems);
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-    const AddBook = useSelector((store)=>store.AddBook.items);
-    console.log(AddBook)
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
 
     return (
-
-        <div className="max-w-5xl mx-auto px-1 py-2">
+        <div className="bg-indigo-700 text-white">
             {/* Nav */}
-            <nav className="flex flex-wrap gap-4 justify-center text-blue-600 font-semibold text-lg mb-4">
-                <Link to="/" ><li className="hover:underline">Home</li></Link>
-                <Link to="/about" ><li className="hover:underline">About</li></Link>
-                <Link to="/contact" ><li className="hover:underline"> contact</li></Link>
-                <Link to="/add" ><li className="hover:underline">Add Book {AddBook.length}</li></Link>
+            <nav className="flex justify-between items-center p-4 text-white font-semibold text-lg">
+                {/* Logo */}
+                <Link to="/" className="text-3xl flex items-center gap-2 hover:text-red-400 hover:scale-105 transition-transform duration-200">
+                    <IoLibrary />
+                    <span>Library</span>
+                </Link>
+
+                {/* Hamburger Menu for Small Screens */}
+                <div className="md:hidden">
+                    <button onClick={toggleMenu} className="text-3xl">
+                        {isMenuOpen ? <AiOutlineClose /> : <AiOutlineMenu />}
+                    </button>
+                </div>
+
+                {/* Nav Links */}
+                <ul
+                    className={`flex flex-col text-2xl md:flex-row gap-4 text-center md:text-left md:items-center transition-all duration-300 ease-in-out ${isMenuOpen ? "flex" : "hidden md:flex"
+                        }`}
+                >
+                    <Link to="/">
+                        <li className="hover:text-red-400 hover:no-underline transition-colors">Home</li>
+                    </Link>
+                    <Link to="/about">
+                        <li className="hover:text-red-400 hover:no-underline transition-colors">About</li>
+                    </Link>
+                    <Link to="/contact">
+                        <li className="hover:text-red-400 hover:no-underline transition-colors">Contact</li>
+                    </Link>
+                    <Link to="/add">
+                        <li className="hover:text-red-400 hover:no-underline transition-colors">
+                            Add Book
+                            {newBooks.length > 0 && (
+                                <span className="text-xl font-bold text-white ml-2">
+                                    ({newBooks.length})
+                                </span>
+                            )}
+                        </li>
+                    </Link>
+                </ul>
             </nav>
 
             {/* Heading */}
-            <h1 className="text-3xl font-bold text-center mb-3 text-gray-800">📚 Welcome to the Online Library!</h1>
-
+            <h1 className="text-2xl sm:text-3xl font-bold text-center pb-5 mb-3 text-gray-100">
+                📚 Welcome to the Online Library!
+            </h1>
         </div>
-    )
+    );
 }
 
-export default Header
+export default Header;

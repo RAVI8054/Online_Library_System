@@ -15,12 +15,16 @@ function Search({ handleSearch }) {
 
     return (
         <>
-            <input
-                type="text"
-                placeholder='Search by title or author'
-                value={searchInput}
-                onChange={handleInput}
-            />
+            <div className="my-6 px-4 sm:px-6 lg:px-8 max-w-screen-md mx-auto">
+             
+                <input
+                    type="text"
+                    placeholder='Search book by title or author'
+                    value={searchInput}
+                    onChange={handleInput}
+                    className="w-full border border-gray-300 rounded-md py-2 px-4 shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-300"
+                />
+            </div>
         </>
     )
 }

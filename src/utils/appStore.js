@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit"
-import AddBookReducer from "./cartSlice"
+import AddBookReducer from "./addBookSlice"
 
 
 const appStore = configureStore({

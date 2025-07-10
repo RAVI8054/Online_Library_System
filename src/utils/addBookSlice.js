@@ -1,13 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
-
+import Books from "./DummyData";
 const AddBookSlice = createSlice({
     name: "AddBook",
     initialState: {
-        items: [],
+        items: Books,
+        newItems: [],
     },
     reducers: {
         addItem: (state, action) => {
             state.items.push(action.payload);
+            state.newItems.push(action.payload);
         },
         removeItem: (state, action) => {
             // Remove item 

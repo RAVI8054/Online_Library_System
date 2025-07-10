@@ -8,6 +8,7 @@ import About from './Componets/About.jsx'
 import BookDetails from './Componets/BookDetails.jsx'
 import Error from './Componets/Error.jsx'
 import AddBook from './Componets/AddBook.jsx'
+import Contact from './Componets/Contact.jsx'
 const appRouter = createBrowserRouter
   ([
     {
@@ -22,6 +23,10 @@ const appRouter = createBrowserRouter
         {
           path: "/about",
           element: <About />
+        },
+        {
+          path: "/contact",
+          element: <Contact />
         },
         {
           path: "/book/:id",
