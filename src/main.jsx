@@ -5,11 +5,9 @@ import App from './App.jsx'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import BookList from './Componets/BookList.jsx'
 import About from './Componets/About.jsx'
-import Contact from './Componets/Contact.jsx'
 import BookDetails from './Componets/BookDetails.jsx'
-//import AddBook from './Componets/AddBook.jsx'
 import Error from './Componets/Error.jsx'
-
+import AddBook from './Componets/AddBook.jsx'
 const appRouter = createBrowserRouter
   ([
     {
@@ -26,13 +24,16 @@ const appRouter = createBrowserRouter
           element: <About />
         },
         {
-          path: "/contact",
-          element: <Contact />
-        },
-        {
           path: "/book/:id",
           element: <BookDetails />
         },
+        {
+          path: "/books/:category?",
+          element: <BookList />
+        },{
+          path:"/add",
+          element:<AddBook/>
+        }
       ],
     }
   ])

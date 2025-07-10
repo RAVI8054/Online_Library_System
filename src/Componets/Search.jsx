@@ -1,7 +1,7 @@
 // Search component that takes user input and sends it to parent for filtering
 import React, { useState } from 'react'
 
-function Search({ onSearch }) {
+function Search({ handleSearch }) {
 
     // local state to track the input value
     let [searchInput, setSearchInput] = useState("");
@@ -10,7 +10,7 @@ function Search({ onSearch }) {
     function handleInput(e) {
         const value = e.target.value;
         setSearchInput(value);
-        onSearch(value); // Send to parent component
+        handleSearch(value); // Send to parent component
     }
 
     return (
