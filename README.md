@@ -30,6 +30,34 @@ Online Library  is a React-based web application that allows users to browse, vi
 - ✅ This README includes full setup and run instructions
 ---
 ## 📁Project Structure
+```
+project-root/
+│
+├── index.html
+├── index.css
+├── main.js
+├── App.js
+│
+└── src/
+    ├── components/
+    │   ├── About.jsx
+    │   ├── AddBook.jsx
+    │   ├── Book.jsx
+    │   ├── BookDetails.jsx
+    │   ├── BookList.jsx
+    │   ├── Contact.jsx
+    │   ├── Error.jsx
+    │   ├── Footer.jsx
+    │   ├── Header.jsx
+    │   ├── Search.jsx
+    │   └── FilterCategory/
+    │       └── FilterCategory.jsx
+    │
+    └── utils/
+        ├── DummyData.js
+        ├── addBookSlice.js
+        └── appStore.js
+```
 ---
 ## 🚀 Getting Started
 ### 📁 Prerequisites
