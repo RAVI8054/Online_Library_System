@@ -31,8 +31,6 @@ Online Library  is a React-based web application that allows users to browse, vi
 ---
 ## 📁Project Structure
 ```
-project-root/
-│
 ├── index.html
 ├── index.css
 ├── main.js
