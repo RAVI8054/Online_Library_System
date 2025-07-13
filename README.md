@@ -73,4 +73,7 @@ Online Library  is a React-based web application that allows users to browse, vi
 3. Start the server:
    ```bash
    npm run dev
+4. Open your browser and go to:
+    ```bash
+    http://localhost:3000
 ---
